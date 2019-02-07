@@ -1,0 +1,53 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href="calcustilos.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body class="backG">
+        <h1>¡Te Amo!</h1>
+        <p>Te dejo este cuadro para que hagas tus notas ♥</p>
+        <textarea placeholder="Escribe aquí" id="a"></textarea>
+        <button onclick="guardar()">Guardar</button>
+    </body>
+    
+    <style>
+        button
+        {
+            width: 50%;
+            height: 40px;
+            background: rgba(0, 0, 0, .6);
+            font-size: 1.3em;
+            margin-left: 25%;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, .8);
+            border-radius: 5px;
+            outline: none;
+        }
+    </style>
+    
+    <script>
+        
+         window.addEventListener('load', cargar, true);
+        
+        function cargar()
+        {
+            if(localStorage.getItem('acordeon'))
+                {
+                    acordeonGuardado = localStorage.getItem('acordeon');
+                    document.getElementById('a').value = acordeonGuardado;
+                }
+        }
+        
+        function guardar()
+        {          
+            acordeon = document.getElementById('a').value;
+            localStorage.setItem('acordeon', acordeon);
+            window.location.assign('index.html');
+        }
+        
+    </script>
+
+</html>
